@@ -1,0 +1,24 @@
+<ul class="nav nav-pills" role="tablist">
+        <li role="presentation"><a href="#/">Tables</a></li>
+        <li role="presentation" class="active"><a href="#/boissons">Boissons</a></li>
+        <li role="presentation"><a href="#">Lieux</a></li>
+      </ul>
+      
+<div class="list-group">
+      <!--  Pour chaque table  -->
+      <div id="table-{{boisson.name}}" class="list-group-item" ng-repeat="boisson in boissons">
+        <h3>{{boisson.name}}</h3>
+        <img ng-src="{{boisson.img}}"/>
+        <button class="btn btn-default" ng-click="toggle(boisson)">Details</button>
+        <div class="details" ng-show="boisson.details">        
+          <ul>
+            <li><strong>Boisson UUID : </strong>{{boisson.id}}</li>
+            <li><strong>Fabricant Boisson : </strong>{{boisson.fabricant}}</li>
+            <li><strong>Logo : </strong>{{boisson.logo}}</li>
+            <li><strong>Type  : </strong>{{boisson.type}}</li>
+            <li><strong>Descriptive : </strong>{{boisson.descriptive}}</li>            
+          </ul>
+        </div>
+      </div>
+
+    </div>
